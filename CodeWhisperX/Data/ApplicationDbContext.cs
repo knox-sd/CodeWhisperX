@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using CodeWhisperX.Models;
 
 namespace CodeWhisperX.Data
 {
@@ -9,5 +10,6 @@ namespace CodeWhisperX.Data
             : base(options)
         {
         }
+        public DbSet<CodeWhisperX.Models.CodeX> CodeX { get; set; } = default!;
     }
 }
