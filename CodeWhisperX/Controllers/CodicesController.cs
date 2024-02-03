@@ -24,6 +24,19 @@ namespace CodeWhisperX.Controllers
         {
             return View(await _context.CodeX.ToListAsync());
         }
+        // GET: Codices/ShowSearchForm
+        public async Task<IActionResult> ShowSearchForm()
+        {
+            return View();
+        }
+
+        // Post: Codices/ShowSearchResults
+        public async Task<IActionResult> ShowSearchResults(String SearchPhrase)
+        //public string ShowSearchResults(String SearchPhrase)
+        {
+            return View("Index", await _context.CodeX.Where( j => j.CodeQuestion.Contains(SearchPhrase)).ToListAsync());
+            //return "You entered " + SearchPhrase;
+        }
 
         // GET: Codices/Details/5
         public async Task<IActionResult> Details(int? id)

@@ -13,7 +13,7 @@ namespace CodeWhisperX.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     [Migration("20240203112629_initialsetup")]
-    partial class initialsetup
+    partial class initialSetup
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

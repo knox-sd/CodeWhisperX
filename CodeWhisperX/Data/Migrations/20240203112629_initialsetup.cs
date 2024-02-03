@@ -5,7 +5,7 @@
 namespace CodeWhisperX.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class initialsetup : Migration
+    public partial class initialSetup : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
