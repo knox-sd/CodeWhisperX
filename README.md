@@ -1,2 +1,2 @@
 # CodeWhisperX
-Learn Syntax, Function and Command with CodeWhisperX.
+Learn Programming Syntax, Function and Command with CodeWhisperX.
