@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CodeWhisperX.Data;
 using CodeWhisperX.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CodeWhisperX.Controllers
 {
@@ -57,6 +58,8 @@ namespace CodeWhisperX.Controllers
         }
 
         // GET: Codices/Create
+
+        [Authorize]
         public IActionResult Create()
         {
             return View();
@@ -65,6 +68,7 @@ namespace CodeWhisperX.Controllers
         // POST: Codices/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,CodeQuestion,CodeAnswer")] CodeX codeX)
@@ -79,6 +83,7 @@ namespace CodeWhisperX.Controllers
         }
 
         // GET: Codices/Edit/5
+        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -97,6 +102,7 @@ namespace CodeWhisperX.Controllers
         // POST: Codices/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,CodeQuestion,CodeAnswer")] CodeX codeX)
@@ -130,6 +136,7 @@ namespace CodeWhisperX.Controllers
         }
 
         // GET: Codices/Delete/5
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -147,9 +154,11 @@ namespace CodeWhisperX.Controllers
             return View(codeX);
         }
 
-        // POST: Codices/Delete/5
+        // POST: Codices/Delete/5 - Confirmed
+
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var codeX = await _context.CodeX.FindAsync(id);

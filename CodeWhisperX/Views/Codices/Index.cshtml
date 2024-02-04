@@ -1,4 +1,4 @@
-﻿@model IEnumerable<CodeWhisperX.Models.CodeX>
+﻿@model IEnumerable<CodeWhisperX.Models.CodeX> //list of questions
 
 @{
     ViewData["Title"] = "Index";
@@ -15,9 +15,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.CodeQuestion)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CodeAnswer)
-            </th>
+
             <th></th>
         </tr>
     </thead>
@@ -27,9 +25,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.CodeQuestion)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CodeAnswer)
-            </td>
+
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
